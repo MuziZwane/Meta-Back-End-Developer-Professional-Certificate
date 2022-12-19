@@ -1,0 +1,48 @@
+coder@cd8e3bb9d0c2:~/project$ pip3 install virtualenv
+Requirement already satisfied: virtualenv in /home/coder/.local/lib/python3.8/site-packages (20.16.6)
+Requirement already satisfied: distlib<1,>=0.3.6 in /home/coder/.local/lib/python3.8/site-packages (from virtualenv) (0.3.6)
+Requirement already satisfied: filelock<4,>=3.4.1 in /home/coder/.local/lib/python3.8/site-packages (from virtualenv) (3.8.0)
+Requirement already satisfied: platformdirs<3,>=2.4 in /usr/local/lib/python3.8/dist-packages (from virtualenv) (2.5.2)
+coder@cd8e3bb9d0c2:~/project$ ~/.local/bin/virtualenv django-venv
+created virtual environment CPython3.8.10.final.0-64 in 9772ms
+  creator CPython3Posix(dest=/home/coder/project/django-venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/coder/.local/share/virtualenv)
+    added seed packages: pip==22.3, setuptools==65.5.0, wheel==0.37.1
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+coder@cd8e3bb9d0c2:~/project$ source django-venv/bin/activate^C
+coder@cd8e3bb9d0c2:~/project$ source django-venv/bin/activate
+(django-venv) coder@cd8e3bb9d0c2:~/project$ pip3 install django
+Collecting django
+  Downloading Django-4.1.4-py3-none-any.whl (8.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 111.7 MB/s eta 0:00:00
+Collecting asgiref<4,>=3.5.2
+  Using cached asgiref-3.5.2-py3-none-any.whl (22 kB)
+Collecting backports.zoneinfo
+  Using cached backports.zoneinfo-0.2.1-cp38-cp38-manylinux1_x86_64.whl (74 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.3-py3-none-any.whl (42 kB)
+Installing collected packages: sqlparse, backports.zoneinfo, asgiref, django
+Successfully installed asgiref-3.5.2 backports.zoneinfo-0.2.1 django-4.1.4 sqlparse-0.4.3
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
+(django-venv) coder@cd8e3bb9d0c2:~/project$ django-admin startproject myproject
+(django-venv) coder@cd8e3bb9d0c2:~/project$ cd myproject
+(django-venv) coder@cd8e3bb9d0c2:~/project/myproject$ python manage.py startapp myapp
+(django-venv) coder@cd8e3bb9d0c2:~/project/myproject$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+December 19, 2022 - 06:00:23
+Django version 4.1.4, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[19/Dec/2022 06:03:09] "GET / HTTP/1.1" 200 10681
+[19/Dec/2022 06:03:09] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[19/Dec/2022 06:03:09] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[19/Dec/2022 06:03:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[19/Dec/2022 06:03:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
